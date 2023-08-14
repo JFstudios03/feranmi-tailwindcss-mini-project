@@ -6,22 +6,27 @@
     <title>Feranmi-Mini-TailwindCSS-project</title>
     <link href="/src/output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body class="">
     <div class="bg-blue-950 text-white p-10 pt-3 md:px-20">
         <div class="md:flex md:justify-between md:items-center">
-            <div>
+            <div class="flex justify-between items-center">
                 <img src="img/logo.png" alt="" width="100px" class="md:animate-bounce">
+                <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                    <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+                </span>
             </div>
 
-            <div>
-                <a href="#" class="px-5 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Home</a>
-                <a href="#" class="px-5 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">About</a>
-                <a href="#" class="px-5 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Service</a>
-                <a href="#" class="px-5 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Works</a>
-                <a href="#" class="px-5 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Blog</a>
-                <a href="#" class="px-5 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Contact</a>
-            </div>
+            <ul class="md:flex md:flex-row flex-col md:items-center md:justify-between z-[-1] md:z-auto md:static absolute bg-blue-950 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[400px] transition-all ease-in duration-500">
+                <a href="#" class="mx-5 md:my-0 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Home</a>
+                <a href="#" class="mx-5 md:my-0 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">About</a>
+                <a href="#" class="mx-5 md:my-0 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Service</a>
+                <a href="#" class="mx-5 md:my-0 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Works</a>
+                <a href="#" class="mx-5 md:my-0 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Blog</a>
+                <a href="#" class="mx-5 md:my-0 hover:underline duration-1000 ease-in-out hover:underline-offset-4 decoration-orange-600">Contact</a>
+            </ul>
 
             <div>
                 <a href="#" class="border-2 px-5 py-1 rounded-2xl duration-1000 ease-in-out hover:bg-white hover:text-blue-950">Sign in</a>
@@ -165,5 +170,12 @@
             <p class="text-sm">agboolaferanmi18@gmail.com</p>
         </div>
     </footer>
+
+    <script>
+        function Menu(e){
+            let list = document.querySelector('ul');
+            e.name === 'menu' ? (e.name = "close" ,list.classList.add('top-[80px]') , list.classList.add('opacity-100')) : (e.name = "menu" ,list.classList.remove('top-[80px]') , list.classList.remove('opacity-100'))
+        }
+    </script>
 </body>
 </html>
